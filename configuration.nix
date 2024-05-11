@@ -134,6 +134,7 @@ in {
 	eza
     fish
 	btop
+	starship
 
 	# System utilities
 	input-remapper
@@ -146,12 +147,8 @@ in {
 	croc
 	magic-wormhole
 
-	# Code
-	pipenv
-
 	# Applications
     brave
-	vscode
     microsoft-edge
 	qbittorrent
 	tor-browser
@@ -164,6 +161,7 @@ in {
     qogir-theme
     qogir-kde
 	tela-icon-theme
+	unstable.vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
