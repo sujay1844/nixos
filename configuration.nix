@@ -147,13 +147,6 @@ in {
 	magic-wormhole
 
 	# Code
-	python3
-	python3Packages.pip
-	nodejs
-	nodePackages.npm
-	go
-	elixir
-	bun
 	pipenv
 
 	# Applications
