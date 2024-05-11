@@ -4,22 +4,12 @@
 
 { config, pkgs, pkgs-unstable, ... }:
 
-# let 
-#   unstable = import <nixpkgs-unstable> { };
-# in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
-  # Add the unstable channel
-  # nixpkgs.overlays = [
-  #   (self: super: {
-  #     unstable = super.import "${self.inputs.nixpkgs.url}/nixos-unstable";
-  #   })
-  # ];
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -52,17 +42,17 @@
     LC_TIME = "en_IN";
   };
 
-  # Enable the X11 windowing system.
 
-  # Enable the GNOME Desktop Environment.
 
   # Configure keymap in X11
   services.xserver = {
+    # Enable the X11 windowing system.
     enable = true;
     displayManager.gdm = {
       enable = true;
       wayland = true;
     };
+    # Enable the GNOME Desktop Environment.
     desktopManager.gnome.enable = true;
     layout = "us";
     xkbVariant = "";
@@ -123,7 +113,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
-	NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = "1";
   };
 
   # List packages installed in system profile. To search, run:

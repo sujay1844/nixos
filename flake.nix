@@ -20,7 +20,12 @@
 	in {
 		nixosConfigurations = {
 			stormbreaker = nixpkgs.lib.nixosSystem {
-				specialArgs = { inherit system; inherit pkgs; inherit pkgs-unstable; };
+
+				specialArgs = {
+					inherit system;
+					inherit pkgs;
+					inherit pkgs-unstable;
+				};
 				modules = [
 					./configuration.nix
 				];
