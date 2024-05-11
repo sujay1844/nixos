@@ -1,15 +1,29 @@
 {
-  description = "A very basic flake";
+	description = "Main NixOS Flake";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-  };
+	inputs = {
+		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-23.11";
+	};
 
-  outputs = { self, nixpkgs }: {
+	outputs = { self, nixpkgs }:
+	let 
+		system = "x86_64-linux";
+		pkgs = import nixpkgs {
+			inherit system;
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+			config = {
+				allowUnfree = true;
+			};
+		};
 
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-  };
+	in {
+		nixosConfigurations = {
+			main = nixpkgs.lib.nixosSystem {
+				specialArgs = { inherit system; };
+				modules = [
+					./configuration.nix
+				];
+			};
+		};
+	};
 }
