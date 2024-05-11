@@ -4,9 +4,7 @@
 
 { config, pkgs, ... }:
 
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in {
+{
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -46,14 +44,17 @@ in {
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
+    enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome.enable = true;
     layout = "us";
     xkbVariant = "";
   };
@@ -112,56 +113,60 @@ in {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.sessionVariables = {
+	NIXOS_OZONE_WL = "1";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	# Essentials
+    # Essentials
     vim
-	git
+    git
     wget
     curl
-	gcc
-	cargo
-	docker
-	openssh
-	iputils
-	busybox
+    gcc
+    cargo
+    docker
+    openssh
+    iputils
+    busybox
 
-	# Modern utils
-	ripgrep
-	fd
-	bat
-	eza
+    # Modern utils
+    ripgrep
+    fd
+    bat
+    eza
     fish
-	btop
-	starship
+    btop
+    starship
 
-	# System utilities
-	input-remapper
-	gparted
-	kitty
+    # System utilities
+    input-remapper
+    gparted
+    kitty
     pv
-	acpi
-	rsync
-	sshfs
-	croc
-	magic-wormhole
+    acpi
+    rsync
+    sshfs
+    croc
+    magic-wormhole
 
-	# Applications
+    # Applications
     brave
     microsoft-edge
-	qbittorrent
-	tor-browser
+    qbittorrent
+    tor-browser
 
-	# Desktop Environment
+    # Desktop Environment
     gnome.gnome-tweaks
-	gnome.gnome-terminal
-	gnomeExtensions.pop-shell
+    gnome.gnome-terminal
+    gnomeExtensions.pop-shell
     qogir-icon-theme
     qogir-theme
     qogir-kde
-	tela-icon-theme
-	unstable.vscode
+    tela-icon-theme
+    vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
