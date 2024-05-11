@@ -2,14 +2,23 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
+# let 
+#   unstable = import <nixpkgs-unstable> { };
+# in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
+  # Add the unstable channel
+  # nixpkgs.overlays = [
+  #   (self: super: {
+  #     unstable = super.import "${self.inputs.nixpkgs.url}/nixos-unstable";
+  #   })
+  # ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -166,7 +175,7 @@
     qogir-theme
     qogir-kde
     tela-icon-theme
-    vscode
+    pkgs-unstable.vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
