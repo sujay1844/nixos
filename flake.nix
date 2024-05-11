@@ -18,7 +18,7 @@
 
 	in {
 		nixosConfigurations = {
-			main = nixpkgs.lib.nixosSystem {
+			stormbreaker = nixpkgs.lib.nixosSystem {
 				specialArgs = { inherit system; };
 				modules = [
 					./configuration.nix
