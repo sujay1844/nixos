@@ -4,6 +4,9 @@
 
 { config, pkgs, pkgs-unstable, ... }:
 
+let
+  unstable = pkgs-unstable;
+in 
 {
   imports =
     [
@@ -150,10 +153,13 @@
     sshfs
     croc
     magic-wormhole
+	wl-clipboard
+	zoxide
 
     # Applications
     brave
-    microsoft-edge
+    unstable.microsoft-edge
+    unstable.vscode
     qbittorrent
     tor-browser
 
@@ -165,7 +171,6 @@
     qogir-theme
     qogir-kde
     tela-icon-theme
-    pkgs-unstable.vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
