@@ -142,6 +142,7 @@ in
     fish
     btop
     starship
+	gh
 
     # System utilities
     input-remapper
