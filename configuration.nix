@@ -143,6 +143,8 @@ in
     btop
     starship
 	gh
+	delta
+	thefuck
 
     # System utilities
     input-remapper
