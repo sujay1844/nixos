@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, nixvim-config, system, ... }:
 
 let
   unstable = pkgs-unstable;
@@ -106,10 +106,10 @@ in
 
   # Install firefox.
   programs.firefox.enable = true;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  # };
   programs.fish.enable = true;
 
   # Allow unfree packages
@@ -122,6 +122,7 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    nixvim-config.packages.${system}.default
     # Essentials
     vim
     git
@@ -134,6 +135,7 @@ in
     iputils
     busybox
 
+
     # Modern utils
     ripgrep
     fd
@@ -142,9 +144,9 @@ in
     fish
     btop
     starship
-	gh
-	delta
-	thefuck
+    gh
+    delta
+    thefuck
 
     # System utilities
     input-remapper

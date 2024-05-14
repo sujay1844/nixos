@@ -4,9 +4,12 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-23.11";
 		nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+		nixvim-config = {
+			url = "github:sujay1844/nixvim";
+		};
 	};
 
-	outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, ... }:
+	outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, nixvim-config, ... }:
 	let 
 		system = "x86_64-linux";
 		pkgs = import nixpkgs {
@@ -25,6 +28,8 @@
 					inherit system;
 					inherit pkgs;
 					inherit pkgs-unstable;
+					inherit inputs;
+					inherit nixvim-config;
 				};
 				modules = [
 					./configuration.nix
