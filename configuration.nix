@@ -189,6 +189,13 @@ in
     enableSSHSupport = true;
   };
 
+  # Fonts
+  fonts.packages = with pkgs; [
+	fira-code
+	fira-code-symbols
+	(nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
+  ];
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
