@@ -119,6 +119,7 @@ in
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+	EDITOR = "nvim";
   };
 
   # List packages installed in system profile. To search, run:
