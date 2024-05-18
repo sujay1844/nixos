@@ -148,6 +148,7 @@ in
     btop
     starship
     gh
+	entr
     delta
     thefuck
 
