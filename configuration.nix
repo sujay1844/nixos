@@ -154,7 +154,7 @@ in
     # System utilities
     input-remapper
     gparted
-    alacritty
+    unstable.alacritty
     pv
     acpi
     rsync
