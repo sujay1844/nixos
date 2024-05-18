@@ -140,6 +140,7 @@ in
 
 
     # Modern utils
+	fzf
     ripgrep
     fd
     bat
