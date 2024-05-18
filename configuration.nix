@@ -154,7 +154,7 @@ in
     # System utilities
     input-remapper
     gparted
-    kitty
+    alacritty
     pv
     acpi
     rsync
