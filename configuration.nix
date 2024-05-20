@@ -152,6 +152,9 @@ in
 	entr
     delta
     thefuck
+	jq
+	ncdu
+	fastfetch
 
     # System utilities
     input-remapper
@@ -170,6 +173,7 @@ in
     brave
     unstable.microsoft-edge
     unstable.vscode
+	mpv
     qbittorrent
     tor-browser
 
