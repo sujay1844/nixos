@@ -155,6 +155,7 @@ in
 	jq
 	ncdu
 	fastfetch
+	mprocs
 
     # System utilities
     input-remapper
