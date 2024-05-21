@@ -168,6 +168,7 @@ in
     magic-wormhole
 	wl-clipboard
 	zoxide
+	appimage-run
 
     # Applications
     brave
@@ -201,6 +202,17 @@ in
 	fira-code-symbols
 	(nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
   ];
+
+  # To run AppImages directly
+  # https://nixos.wiki/wiki/Appimage
+  boot.binfmt.registrations.appimage = {
+	  wrapInterpreterInShell = false;
+	  interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+	  recognitionType = "magic";
+	  offset = 0;
+	  mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+	  magicOrExtension = ''\x7fELF....AI\x02'';
+  };
 
   # List services that you want to enable:
 
