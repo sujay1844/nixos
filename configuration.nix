@@ -137,7 +137,7 @@ in
     openssh
     iputils
     busybox
-
+	parallel
 
     # Modern utils
 	fzf
