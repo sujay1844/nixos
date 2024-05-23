@@ -172,7 +172,7 @@ in
 	appimage-run
 
     # Applications
-    brave
+    unstable.brave
     unstable.microsoft-edge
     unstable.vscode
 	unstable.obsidian
