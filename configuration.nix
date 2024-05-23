@@ -88,7 +88,7 @@ in
 	  enable = true;
 	  setSocketVariable = true;
 	};
-	enableOnBoot = true;
+	enableOnBoot = false;
   };
   powerManagement.enable = true;
 
@@ -175,6 +175,7 @@ in
     brave
     unstable.microsoft-edge
     unstable.vscode
+	unstable.obsidian
 	mpv
     qbittorrent
     tor-browser
