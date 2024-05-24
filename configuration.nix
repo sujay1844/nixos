@@ -82,6 +82,12 @@ in
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  services.syncthing = {
+	enable = true;
+	user = "sujay1844";
+	dataDir = "/home/sujay1844";
+	configDir = "/home/sujay1844/.config/syncthing";
+  };
   virtualisation.docker = {
 	enable = true;
 	rootless = {
@@ -170,6 +176,8 @@ in
 	wl-clipboard
 	zoxide
 	appimage-run
+	rclone
+	syncthing
 
     # Applications
     unstable.brave
@@ -222,8 +230,8 @@ in
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
