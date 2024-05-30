@@ -135,6 +135,7 @@ in
     # Essentials
     vim
     git
+	git-lfs
     wget
     curl
     gcc
