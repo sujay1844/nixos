@@ -2,7 +2,7 @@
 	description = "Main NixOS Flake";
 
 	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-23.11";
+		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
 		nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 		nixvim-config = {
 			url = "github:sujay1844/nixvim";
