@@ -145,6 +145,7 @@ in
     iputils
     busybox
 	parallel
+	zip
 
     # Modern utils
 	fzf
@@ -163,6 +164,10 @@ in
 	ncdu
 	fastfetch
 	mprocs
+	pzip
+	pigz
+	pbzip2
+	pxz
 
     # System utilities
     input-remapper
