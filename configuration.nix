@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+# Edt this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -58,8 +58,8 @@ in
     };
     # Enable the GNOME Desktop Environment.
     desktopManager.gnome.enable = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -99,7 +99,7 @@ in
   powerManagement.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sujay1844 = {
