@@ -168,6 +168,7 @@ in
 	pigz
 	pbzip2
 	pxz
+	gitui
 
     # System utilities
     input-remapper
@@ -190,6 +191,7 @@ in
     unstable.microsoft-edge
     unstable.vscode
 	unstable.obsidian
+	unstable.zed-editor
 	mpv
     qbittorrent
     tor-browser
