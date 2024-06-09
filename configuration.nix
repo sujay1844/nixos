@@ -169,6 +169,7 @@ in
 	pbzip2
 	pxz
 	gitui
+	zellij
 
     # System utilities
     input-remapper
