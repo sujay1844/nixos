@@ -189,12 +189,13 @@ in
     # Applications
     unstable.brave
     unstable.microsoft-edge
-    unstable.vscode
+    unstable.vscode-fhs
 	unstable.obsidian
 	unstable.zed-editor
 	mpv
     qbittorrent
     tor-browser
+	jetbrains.goland
 
     # Desktop Environment
     gnome.gnome-tweaks
