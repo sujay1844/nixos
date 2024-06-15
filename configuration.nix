@@ -124,6 +124,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
+    NIXPKGS_ALLOW_UNFREE = "1";
     NIXOS_OZONE_WL = "1";
 	EDITOR = "nvim";
   };
@@ -215,6 +216,8 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   # Fonts
   fonts.packages = with pkgs; [
