@@ -2,20 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, nixvim-config, system, ... }:
+{ pkgs, pkgs-unstable, nixvim-config, system, ... }:
 
-let
-  unstable = pkgs-unstable;
-in 
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+let unstable = pkgs-unstable;
+in {
+  imports = [ ./hardware-configuration.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
+  boot.kernelParams = [ "btusb.autosuspend=n" ];
 
   networking.hostName = "stormbreaker"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -45,8 +41,6 @@ in
     LC_TELEPHONE = "en_IN";
     LC_TIME = "en_IN";
   };
-
-
 
   # Configure keymap in X11
   services.xserver = {
@@ -83,18 +77,18 @@ in
     #media-session.enable = true;
   };
   services.syncthing = {
-	enable = true;
-	user = "sujay1844";
-	dataDir = "/home/sujay1844";
-	configDir = "/home/sujay1844/.config/syncthing";
+    enable = true;
+    user = "sujay1844";
+    dataDir = "/home/sujay1844";
+    configDir = "/home/sujay1844/.config/syncthing";
   };
   virtualisation.docker = {
-	enable = true;
-	rootless = {
-	  enable = true;
-	  setSocketVariable = true;
-	};
-	enableOnBoot = false;
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+    enableOnBoot = false;
   };
   powerManagement.enable = true;
 
@@ -107,9 +101,7 @@ in
     description = "sujay1844";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    # packages = with pkgs; [ ];
   };
 
   # Install firefox.
@@ -126,7 +118,7 @@ in
   environment.sessionVariables = {
     NIXPKGS_ALLOW_UNFREE = "1";
     NIXOS_OZONE_WL = "1";
-	EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   # List packages installed in system profile. To search, run:
@@ -136,7 +128,7 @@ in
     # Essentials
     vim
     git
-	git-lfs
+    git-lfs
     wget
     curl
     gcc
@@ -145,11 +137,11 @@ in
     openssh
     iputils
     busybox
-	parallel
-	zip
+    parallel
+    zip
 
     # Modern utils
-	fzf
+    fzf
     ripgrep
     fd
     bat
@@ -158,19 +150,19 @@ in
     btop
     starship
     gh
-	entr
+    entr
     delta
     thefuck
-	jq
-	ncdu
-	fastfetch
-	mprocs
-	pzip
-	pigz
-	pbzip2
-	pxz
-	gitui
-	zellij
+    jq
+    ncdu
+    fastfetch
+    mprocs
+    pzip
+    pigz
+    pbzip2
+    pxz
+    gitui
+    zellij
 
     # System utilities
     input-remapper
@@ -182,22 +174,22 @@ in
     sshfs
     croc
     magic-wormhole
-	wl-clipboard
-	zoxide
-	appimage-run
-	rclone
-	syncthing
+    wl-clipboard
+    zoxide
+    appimage-run
+    rclone
+    syncthing
 
     # Applications
     unstable.brave
     unstable.microsoft-edge
     unstable.vscode-fhs
-	unstable.obsidian
-	unstable.zed-editor
-	mpv
+    unstable.obsidian
+    unstable.zed-editor
+    mpv
     qbittorrent
     tor-browser
-	jetbrains.goland
+    jetbrains.goland
 
     # Desktop Environment
     gnome.gnome-tweaks
@@ -221,20 +213,20 @@ in
 
   # Fonts
   fonts.packages = with pkgs; [
-	fira-code
-	fira-code-symbols
-	(nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
+    fira-code
+    fira-code-symbols
+    (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
   ];
 
   # To run AppImages directly
   # https://nixos.wiki/wiki/Appimage
   boot.binfmt.registrations.appimage = {
-	  wrapInterpreterInShell = false;
-	  interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-	  recognitionType = "magic";
-	  offset = 0;
-	  mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-	  magicOrExtension = ''\x7fELF....AI\x02'';
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = "\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\xff\\xff\\xff";
+    magicOrExtension = "\\x7fELF....AI\\x02";
   };
 
   # List services that you want to enable:
