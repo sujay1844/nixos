@@ -190,6 +190,7 @@ in {
     qbittorrent
     tor-browser
     jetbrains.goland
+    libreoffice
 
     # Desktop Environment
     gnome.gnome-tweaks
