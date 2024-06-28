@@ -185,12 +185,12 @@ in {
     unstable.microsoft-edge
     unstable.vscode-fhs
     unstable.obsidian
-    unstable.zed-editor
     mpv
     qbittorrent
     tor-browser
     jetbrains.goland
     libreoffice
+    beekeeper-studio
 
     # Desktop Environment
     gnome.gnome-tweaks
