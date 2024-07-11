@@ -190,7 +190,7 @@ in {
     tor-browser
     jetbrains.goland
     libreoffice
-    beekeeper-studio
+    cozy
 
     # Desktop Environment
     gnome.gnome-tweaks
