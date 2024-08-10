@@ -174,6 +174,7 @@ in {
     rsync
     sshfs
     croc
+    oath-toolkit
     magic-wormhole
     wl-clipboard
     zoxide
