@@ -99,7 +99,7 @@ in {
   users.users.sujay1844 = {
     isNormalUser = true;
     description = "sujay1844";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "input" "uinput" ];
     shell = pkgs.fish;
     # packages = with pkgs; [ ];
   };
@@ -161,8 +161,9 @@ in {
     pigz
     pbzip2
     pxz
-    gitui
+    lazygit
     zellij
+    unstable.mongodb-compass
 
     # System utilities
     input-remapper
