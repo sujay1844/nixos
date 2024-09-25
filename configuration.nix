@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, pkgs-unstable, nixvim-config, system, ... }:
+{ pkgs, pkgs-unstable, nixvim-config, config, system, ... }:
 
 let unstable = pkgs-unstable;
 in {
@@ -12,6 +12,12 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
   boot.kernelParams = [ "btusb.autosuspend=n" ];
+  boot.extraModulePackages = with config.boot.kernelPackages;
+    [ v4l2loopback.out ];
+  boot.kernelModules = [ "v4l2loopback" "snd_aloop" ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback card_label="Virtual Camera" 
+  '';
 
   networking.hostName = "stormbreaker"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
