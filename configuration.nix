@@ -105,7 +105,8 @@ in {
   users.users.sujay1844 = {
     isNormalUser = true;
     description = "sujay1844";
-    extraGroups = [ "networkmanager" "wheel" "docker" "input" "uinput" ];
+    extraGroups =
+      [ "networkmanager" "wheel" "docker" "input" "uinput" "adbusers" ];
     shell = pkgs.fish;
     # packages = with pkgs; [ ];
   };
@@ -117,6 +118,7 @@ in {
   #   defaultEditor = true;
   # };
   programs.fish.enable = true;
+  programs.adb.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
