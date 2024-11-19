@@ -205,7 +205,7 @@ in {
     unstable.code-cursor
     unstable.obsidian
     mpv
-    qbittorrent
+    unstable.qbittorrent
     tor-browser
     jetbrains.goland
     libreoffice
