@@ -169,9 +169,17 @@ in {
     pigz
     pbzip2
     pxz
-    lazygit
+    gitui
     zellij
     unstable.mongodb-compass
+
+    # Dev
+    python3
+    corepack
+    go
+    sqlite
+    google-cloud-sdk
+    poetry
 
     # System utilities
     input-remapper
@@ -191,9 +199,10 @@ in {
     syncthing
 
     # Applications
-    unstable.brave
+    brave
     unstable.microsoft-edge
     unstable.vscode-fhs
+    unstable.code-cursor
     unstable.obsidian
     mpv
     qbittorrent
