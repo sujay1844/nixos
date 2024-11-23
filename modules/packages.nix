@@ -4,6 +4,17 @@ let
   unstable = pkgs-unstable;
 in
 {
+  programs = {
+    firefox.enable = true;
+    fish.enable = true;
+    adb.enable = true;
+    mtr.enable = true;
+    virt-manager.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+  };
   environment.systemPackages = with pkgs; [
     nixvim-config.packages.${system}.default
     # Essentials

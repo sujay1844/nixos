@@ -30,7 +30,13 @@
             inherit inputs;
             inherit nixvim-config;
           };
-          modules = [ ./configuration.nix ];
+          modules =
+            let
+              getModules = dir: builtins.map
+                (name: dir + "/${name}")
+                (builtins.attrNames (builtins.readDir dir));
+            in
+            getModules ./modules;
         };
       };
     };
