@@ -18,7 +18,8 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-    in {
+    in
+    {
       nixosConfigurations = {
         stormbreaker = nixpkgs.lib.nixosSystem {
 

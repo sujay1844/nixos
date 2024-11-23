@@ -1,7 +1,7 @@
 {
   # System-wide settings
   time.timeZone = "Asia/Kolkata";
-  
+
   i18n = {
     defaultLocale = "en_IN";
     extraLocaleSettings = {
@@ -27,4 +27,4 @@
   };
 
   system.stateVersion = "23.11";
-} 
+}

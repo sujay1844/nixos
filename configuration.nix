@@ -1,8 +1,9 @@
 { pkgs, pkgs-unstable, nixvim-config, config, system, ... }:
 
-let 
+let
   unstable = pkgs-unstable;
-in {
+in
+{
   imports = [
     ./hardware-configuration.nix
     ./modules/boot.nix
@@ -26,4 +27,4 @@ in {
       enableSSHSupport = true;
     };
   };
-} 
+}

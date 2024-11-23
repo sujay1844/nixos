@@ -5,4 +5,4 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "input" "uinput" "adbusers" ];
     shell = pkgs.fish;
   };
-} 
+}
