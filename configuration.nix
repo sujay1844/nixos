@@ -210,6 +210,7 @@ in {
     jetbrains.goland
     libreoffice
     cozy
+    signal-desktop
 
     # Desktop Environment
     gnome.gnome-tweaks

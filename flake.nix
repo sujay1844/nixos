@@ -17,6 +17,18 @@
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config = { allowUnfree = true; };
+        overlays = [
+          (self: super: {
+            signal-desktop = super.signal-desktop.overrideAttrs (old: {
+              preFixup = old.preFixup + ''
+                gappsWrapperArgs+=(
+                  --add-flags "--enable-features=UseOzonePlatform"
+                  --add-flags "--ozone-platform=wayland"
+                )
+              '';
+            });
+          })
+        ];
       };
     in {
       nixosConfigurations = {
