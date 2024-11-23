@@ -197,6 +197,7 @@ in {
     appimage-run
     rclone
     syncthing
+    bitwarden-cli
 
     # Applications
     brave
@@ -211,6 +212,7 @@ in {
     libreoffice
     cozy
     signal-desktop
+    bitwarden-desktop
 
     # Desktop Environment
     gnome.gnome-tweaks
