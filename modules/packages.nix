@@ -1,9 +1,7 @@
 { pkgs, pkgs-unstable, nixvim-config, system, ... }:
 
-let
-  unstable = pkgs-unstable;
-in
-{
+let unstable = pkgs-unstable;
+in {
   programs = {
     firefox.enable = true;
     fish.enable = true;
@@ -60,6 +58,7 @@ in
     # Dev
     python3
     corepack
+    nodejs_22
     go
     sqlite
     google-cloud-sdk
