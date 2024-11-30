@@ -7,4 +7,6 @@
       allowedUDPPorts = [ 22000 21027 ];
     };
   };
+
+  hardware.bluetooth.input = { General = { IdleTimeout = 0; }; };
 }
