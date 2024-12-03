@@ -91,7 +91,7 @@ in {
     mpv
     unstable.qbittorrent
     tor-browser
-    jetbrains.goland
+    zed-editor
     libreoffice
     cozy
     signal-desktop
