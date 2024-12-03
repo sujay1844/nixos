@@ -2,7 +2,7 @@
   description = "Main NixOS Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixvim-config = { url = "github:sujay1844/nixvim"; };
   };
@@ -18,8 +18,7 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-    in
-    {
+    in {
       nixosConfigurations = {
         stormbreaker = nixpkgs.lib.nixosSystem {
 
@@ -30,13 +29,11 @@
             inherit inputs;
             inherit nixvim-config;
           };
-          modules =
-            let
-              getModules = dir: builtins.map
-                (name: dir + "/${name}")
-                (builtins.attrNames (builtins.readDir dir));
-            in
-            getModules ./modules;
+          modules = let
+            getModules = dir:
+              builtins.map (name: dir + "/${name}")
+              (builtins.attrNames (builtins.readDir dir));
+          in getModules ./modules;
         };
       };
     };

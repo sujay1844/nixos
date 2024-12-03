@@ -98,8 +98,8 @@ in {
     bitwarden-desktop
 
     # Desktop Environment
-    gnome.gnome-tweaks
-    gnome.gnome-terminal
+    gnome-tweaks
+    gnome-terminal
     gnomeExtensions.pop-shell
     qogir-icon-theme
     qogir-theme
