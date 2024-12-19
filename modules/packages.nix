@@ -12,6 +12,7 @@ in {
       enable = true;
       enableSSHSupport = true;
     };
+    nix-ld.enable = true;
   };
   environment.systemPackages = with pkgs; [
     nixvim-config.packages.${system}.default
