@@ -22,6 +22,7 @@ in {
     git-lfs
     wget
     curl
+    dig
     gcc
     cargo
     docker
