@@ -31,8 +31,10 @@
           };
           modules = let
             getModules = dir:
-              builtins.map (name: dir + "/${name}")
-              (builtins.attrNames (builtins.readDir dir));
+              dir
+              |> builtins.readDir 
+              |> builtins.attrNames
+              |> builtins.map (name: dir + "/${name}");
           in getModules ./modules;
         };
       };
