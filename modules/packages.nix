@@ -56,13 +56,13 @@ in {
     gitui
     zellij
     unstable.mongodb-compass
+    litecli
 
     # Dev
     python3
     corepack
     nodejs_22
     go
-    sqlite
     google-cloud-sdk
     poetry
 
