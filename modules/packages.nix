@@ -31,6 +31,7 @@ in {
     busybox
     parallel
     zip
+    libnotify
 
     # Modern utils
     fzf
