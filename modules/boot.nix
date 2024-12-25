@@ -5,7 +5,7 @@
       efi.canTouchEfiVariables = true;
     };
     plymouth.enable = true;
-    kernelParams = [ "btusb.autosuspend=n" ];
+    kernelParams = [ "btusb.autosuspend=n" "usbcore.autosuspend=-1" ];
     extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
     kernelModules = [ "v4l2loopback" "snd_aloop" ];
     extraModprobeConfig = ''
