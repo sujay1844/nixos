@@ -58,6 +58,7 @@ in {
     zellij
     unstable.mongodb-compass
     litecli
+    stow
 
     # Dev
     python3
