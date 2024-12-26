@@ -17,98 +17,97 @@ in {
   environment.systemPackages = with pkgs; [
     nixvim-config.packages.${system}.default
     # Essentials
-    vim
-    git
-    git-lfs
-    wget
+    busybox
     curl
     dig
-    gcc
-    cargo
     docker
-    openssh
+    gcc
+    git
+    git-lfs
     iputils
-    busybox
-    parallel
-    zip
     libnotify
+    openssh
+    parallel
+    vim
+    wget
+    zip
 
     # Modern utils
-    fzf
-    ripgrep
-    fd
     bat
-    eza
-    fish
     btop
-    starship
-    gh
-    entr
     delta
-    thefuck
-    jq
-    ncdu
+    entr
+    eza
     fastfetch
-    mprocs
-    pzip
-    pigz
-    pbzip2
-    pxz
+    fd
+    fish
+    fzf
+    gh
     gitui
-    zellij
-    unstable.mongodb-compass
+    jq
     litecli
-    yazi
+    mprocs
+    ncdu
+    pbzip2
+    pigz
+    pxz
+    pzip
+    ripgrep
+    starship
     stow
+    thefuck
+    yazi
+    zellij
 
     # Dev
-    python3
     corepack
-    nodejs_22
     go
     google-cloud-sdk
+    nodejs_22
     poetry
+    python3
+    unstable.mongodb-compass
 
     # System utilities
-    input-remapper
-    gparted
-    unstable.alacritty
-    pv
     acpi
+    appimage-run
+    bitwarden-cli
+    croc
+    gparted
+    input-remapper
+    magic-wormhole
+    oath-toolkit
+    pv
+    rclone
     rsync
     sshfs
-    croc
-    oath-toolkit
-    magic-wormhole
+    syncthing
+    unstable.alacritty
     wl-clipboard
     zoxide
-    appimage-run
-    rclone
-    syncthing
-    bitwarden-cli
 
     # Applications
-    brave
-    unstable.microsoft-edge
-    unstable.vscode-fhs
-    unstable.code-cursor
-    unstable.obsidian
-    mpv
-    unstable.qbittorrent
-    tor-browser
-    zed-editor
-    libreoffice
-    cozy
-    signal-desktop
     bitwarden-desktop
+    brave
+    cozy
+    libreoffice
+    mpv
+    signal-desktop
+    tor-browser
+    unstable.code-cursor
+    unstable.microsoft-edge
+    unstable.obsidian
+    unstable.qbittorrent
+    unstable.vscode-fhs
+    zed-editor
 
     # Desktop Environment
-    gnome-tweaks
     gnome-terminal
+    gnome-tweaks
     gnomeExtensions.pop-shell
     qogir-icon-theme
-    qogir-theme
     qogir-kde
+    qogir-theme
     tela-icon-theme
   ];
 }
