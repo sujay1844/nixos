@@ -98,6 +98,7 @@ in {
     unstable.microsoft-edge
     unstable.obsidian
     unstable.qbittorrent
+    unstable.ticktick
     unstable.vscode-fhs
     zed-editor
 
