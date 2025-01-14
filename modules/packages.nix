@@ -43,8 +43,8 @@ in {
     fish
     fzf
     gh
-    gitui
     jq
+    lazygit
     litecli
     mprocs
     ncdu
